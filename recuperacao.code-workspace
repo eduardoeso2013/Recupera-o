@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "..\\..\\Spring\\microservicos\\microsservicos\\eureka-server"
+    },
+    {
+      "path": "..\\..\\Spring\\microservicos\\microsservicos\\zuul-server"
+    },
+    {
+      "path": "cliente-ms"
+    },
+    {
+      "path": "locacao-ms"
+    }
+  ],
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "interactive"
+  }
+}
