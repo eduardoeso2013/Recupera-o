@@ -11,7 +11,7 @@ public interface LocacaoService {
 
   Optional<LocacaoDto> obterLocacaoPorId(String id);
 
-  LocacaoDto cadastrarLocacao(LocacaoDto locacal);
+  LocacaoDto cadastrarLocacao(LocacaoDto locacao);
 
   void excluirLocacaoPorId(String id);
 

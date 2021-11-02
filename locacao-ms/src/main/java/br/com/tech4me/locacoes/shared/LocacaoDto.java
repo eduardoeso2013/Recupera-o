@@ -18,7 +18,7 @@ public class LocacaoDto {
   @NotEmpty(message = "O veiculo nao pode ficar vazio")
   @NotBlank(message = "O veiculo nao pode ficar em branco")
 
-  @Positive
+  @Positive(message = "A quantidade de diarias deve ser maior que 1")
   private Integer diarias;
 
   public String getId() {

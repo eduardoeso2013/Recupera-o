@@ -11,6 +11,12 @@ public class Locacao {
   private String cliente;
   private Integer diarias;
 
+  public Locacao(String veiculo, String cliente, Integer diarias) {
+    this.veiculo = veiculo;
+    this.cliente = cliente;
+    this.diarias = diarias;
+  }
+
   public Locacao(String id, String veiculo, String cliente, Integer diarias) {
     this.id = id;
     this.veiculo = veiculo;

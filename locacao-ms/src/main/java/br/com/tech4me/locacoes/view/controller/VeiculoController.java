@@ -16,27 +16,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.tech4me.locacoes.service.LocacaoService;
-import br.com.tech4me.locacoes.shared.LocacaoDto;
-import br.com.tech4me.locacoes.view.model.LocacaoRequest;
+import br.com.tech4me.locacoes.service.VeiculoService;
+import br.com.tech4me.locacoes.shared.VeiculoDto;
+import br.com.tech4me.locacoes.view.model.VeiculoRequest;
 import java.util.Optional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/locacoes")
+@RequestMapping("/api/veiculos")
 @CrossOrigin
-public class LocacaoController {
+public class VeiculoController {
   @Autowired
-  LocacaoService servico;
+  VeiculoService servico;
 
   @GetMapping
-  public ResponseEntity<List<LocacaoDto>> obterLocacoes() {
+  public ResponseEntity<List<VeiculoDto>> obterVeiculos() {
     return new ResponseEntity<>(servico.obterTodos(), HttpStatus.ACCEPTED);
   }
 
   @GetMapping(value = "/{id}")
-  public ResponseEntity<LocacaoDto> obterLocacaoPorId(@PathVariable String id) {
-    Optional<LocacaoDto> loc = servico.obterLocacaoPorId(id);
+  public ResponseEntity<VeiculoDto> obterVeiculoPorId(@PathVariable String id) {
+    Optional<VeiculoDto> loc = servico.obterVeiculoPorId(id);
 
     if (loc.isPresent()) {
       return new ResponseEntity<>(loc.get(), HttpStatus.FOUND);
@@ -47,24 +47,24 @@ public class LocacaoController {
   }
 
   @PostMapping
-  public ResponseEntity<LocacaoDto> cadastrarLocacao(@RequestBody @Valid LocacaoDto locacao) {
-    return new ResponseEntity<>(servico.cadastrarLocacao(locacao), HttpStatus.CREATED);
+  public ResponseEntity<VeiculoDto> cadastrarVeiculo(@RequestBody @Valid VeiculoDto veiculo) {
+    return new ResponseEntity<>(servico.cadastrarVeiculo(veiculo), HttpStatus.CREATED);
   }
 
   @DeleteMapping(value = "/{id}")
-  public ResponseEntity<Void> excluirLocacao(@PathVariable String id) {
-    servico.excluirLocacaoPorId(id);
+  public ResponseEntity<Void> excluirVeiculo(@PathVariable String id) {
+    servico.excluirVeiculoPorId(id);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
   @PutMapping(value = "/{id}")
-  public ResponseEntity<LocacaoDto> atualizarLocacao(@PathVariable String id,
-      @RequestBody @Valid LocacaoRequest locacao) {
-    LocacaoDto dto = new ModelMapper().map(locacao, LocacaoDto.class);
-    Optional<LocacaoDto> loc = servico.atualizarLocacaoPorId(id, dto);
+  public ResponseEntity<VeiculoDto> atualizarVeiculo(@PathVariable String id,
+      @RequestBody @Valid VeiculoRequest veiculo) {
+    VeiculoDto dto = new ModelMapper().map(veiculo, VeiculoDto.class);
+    Optional<VeiculoDto> veic = servico.atualizarVeiculoPorId(id, dto);
 
-    if (loc.isPresent()) {
-      return new ResponseEntity<>(loc.get(), HttpStatus.OK);
+    if (veic.isPresent()) {
+      return new ResponseEntity<>(veic.get(), HttpStatus.OK);
     }
 
     return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);

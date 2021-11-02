@@ -1,7 +1,6 @@
-package br.com.tech4me.locacoes.view.model;
+package br.com.tech4me.locacoes.shared;
 
-public class LocacaoResponse {
-
+public class Locacao {
   private String id;
   private String veiculo;
   private String cliente;

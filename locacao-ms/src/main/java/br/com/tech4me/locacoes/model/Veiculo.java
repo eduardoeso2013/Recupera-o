@@ -9,17 +9,17 @@ public class Veiculo {
   private String id;
   private String marca;
   private String modelo;
-  private int nrPassageiros;
-  private Double vlDiaria;
-  private String tpCombustivel;
+  private int passageiros;
+  private Double diarias;
+  private String combustivel;
 
-  public Veiculo(String id, String marca, String modelo, int nrPassageiros, Double vlDiaria, String tpCombustivel) {
+  public Veiculo(String id, String marca, String modelo, int passageiros, Double diarias, String combustivel) {
     this.id = id;
     this.marca = marca;
     this.modelo = modelo;
-    this.nrPassageiros = nrPassageiros;
-    this.vlDiaria = vlDiaria;
-    this.tpCombustivel = tpCombustivel;
+    this.passageiros = passageiros;
+    this.diarias = diarias;
+    this.combustivel = combustivel;
   }
 
   public String getId() {
@@ -47,27 +47,27 @@ public class Veiculo {
   }
 
   public int getNrPassageiros() {
-    return nrPassageiros;
+    return passageiros;
   }
 
-  public void setNrPassageiros(int nrPassageiros) {
-    this.nrPassageiros = nrPassageiros;
+  public void setNrPassageiros(int passageiros) {
+    this.passageiros = passageiros;
   }
 
   public Double getVlDiaria() {
-    return vlDiaria;
+    return diarias;
   }
 
-  public void setVlDiaria(Double vlDiaria) {
-    this.vlDiaria = vlDiaria;
+  public void setVlDiaria(Double diarias) {
+    this.diarias = diarias;
   }
 
   public String getTpCombustivel() {
-    return tpCombustivel;
+    return combustivel;
   }
 
-  public void setTpCombustivel(String tpCombustivel) {
-    this.tpCombustivel = tpCombustivel;
+  public void setTpCombustivel(String combustivel) {
+    this.combustivel = combustivel;
   }
 
   public String getModeloCompleto() {
