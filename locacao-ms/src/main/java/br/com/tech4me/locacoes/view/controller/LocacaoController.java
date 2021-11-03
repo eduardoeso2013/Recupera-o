@@ -70,4 +70,18 @@ public class LocacaoController {
     return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
 
   }
+
+  @GetMapping(value = "/{idCliente}/lista")
+  public ResponseEntity<List<LocacaoDto>> obterPorCliente(@PathVariable String cliente) {
+    List<LocacaoDto> dtos = servico.obterPorCliente(cliente);
+
+    if (dtos.isEmpty()) {
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    ModelMapper mapper = new ModelMapper();
+    List<LocacaoResponse> resp = dtos.stream().map(dto -> mapper.map(dto, LocacaoResponse.class))
+        .collect(Collectors.toList());
+
+    return new ResponseEntity<>(resp, HttpStatus.OK);
+  }
 }

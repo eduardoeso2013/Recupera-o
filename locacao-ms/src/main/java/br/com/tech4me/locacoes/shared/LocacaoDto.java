@@ -2,7 +2,7 @@ package br.com.tech4me.locacoes.shared;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Positive;
+// import javax.validation.constraints.Positive;
 
 public class LocacaoDto {
   private String id;
@@ -18,7 +18,7 @@ public class LocacaoDto {
   @NotEmpty(message = "O veiculo nao pode ficar vazio")
   @NotBlank(message = "O veiculo nao pode ficar em branco")
 
-  @Positive(message = "A quantidade de diarias deve ser maior que 1")
+  // @Positive(message = "A quantidade de diarias deve ser maior que 1")
   private Integer diarias;
 
   public String getId() {
