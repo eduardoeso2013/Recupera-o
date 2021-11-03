@@ -1,6 +1,7 @@
 package br.com.tech4me.locacoes.view.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.tech4me.locacoes.service.LocacaoService;
 import br.com.tech4me.locacoes.shared.LocacaoDto;
 import br.com.tech4me.locacoes.view.model.LocacaoRequest;
+import br.com.tech4me.locacoes.view.model.LocacaoResponse;
 import java.util.Optional;
 import javax.validation.Valid;
 
